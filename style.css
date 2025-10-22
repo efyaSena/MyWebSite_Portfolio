@@ -1,4 +1,4 @@
-/* ===== GLOBAL ===== */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: #ffffff; /* White background like Grace */
-  color: #0d1b2a; /* Deep blue text */
+  background-color: #ffffff; 
+  color: #0d1b2a; 
   line-height: 1.6;
 }
 
@@ -20,11 +20,10 @@ body {
 }
 
 /* ===== HEADER ===== */
-/* ===== HEADER ===== */
 header {
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff; 
   padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* subtle shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -36,11 +35,11 @@ header nav.container {
   justify-content: space-between;
 }
 
-/* Logo */
+
 header .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #0b1d51; /* Deep blue like Grace */
+  color: #0b1d51; 
 }
 
 /* Navigation Links */
@@ -52,23 +51,23 @@ header .nav-links {
 
 header .nav-links li a {
   text-decoration: none;
-  color: #0b1d51; /* Deep blue */
+  color: #0b1d51; 
   font-weight: 500;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover effect */
 header .nav-links li a:hover {
-  color: #1e90ff; /* Bright blue accent */
-  transform: translateY(-2px); /* subtle lift on hover */
+  color: #1e90ff; 
+  transform: translateY(-2px); 
 }
 /* ===== HERO SECTION ===== */
 .hero {
-  background-color: #ffffff; /* clean white background */
-  padding: 6rem 2rem; /* generous top/bottom padding */
+  background-color: #ffffff; 
+  padding: 6rem 2rem;
   display: flex;
-  justify-content: center; /* center horizontally */
-  text-align: center; /* center text */
+  justify-content: center; 
+  text-align: center; 
   position: relative;
   overflow: hidden;
 }
@@ -101,14 +100,14 @@ header .nav-links li a:hover {
 /* Hero Text Container */
 .hero-content {
   max-width: 800px;
-  z-index: 1; /* above the accents */
+  z-index: 1; 
 }
 
 /* Headings and Paragraphs */
 .hero-text h2 {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #0b1d51; /* deep blue */
+  color: #0b1d51;
   margin-bottom: 1rem;
   animation: fadeUp 1s ease forwards;
 }
@@ -130,7 +129,7 @@ header .nav-links li a:hover {
 }
 
 .hero-text .tagline {
-  color: #1e90ff; /* bright blue accent */
+  color: #1e90ff;
   font-weight: 600;
   font-size: 1.3rem;
   margin-bottom: 2rem;
@@ -149,11 +148,11 @@ header .nav-links li a:hover {
 }
 
 .hero-text .btn:hover {
-  background-color: #0b1d51; /* dark blue on hover */
-  transform: scale(1.05); /* slight lift */
+  background-color: #0b1d51;
+  transform: scale(1.05);
 }
 
-/* Optional simple fade-up animation */
+
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -192,7 +191,7 @@ header .nav-links li a:hover {
 .about-content {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* smaller gap if desired */
+  gap: 1.5rem; 
   padding: 3rem 0;
 }
 
@@ -211,8 +210,8 @@ header .nav-links li a:hover {
 }
 
 .about-img img {
-  width: 100%; /* takes 40% of the container width */
-  max-width: 500px; /* won’t get too big on large screens */
+  width: 100%;
+  max-width: 500px; 
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(30,58,138,0.1);
 }
@@ -228,7 +227,7 @@ header .nav-links li a:hover {
 .projects h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0b1d51; /* Deep blue for titles */
+  color: #0b1d51;
   margin-bottom: 2rem;
 }
 
@@ -264,26 +263,26 @@ header .nav-links li a:hover {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #0b1d51; /* Deep blue */
+  color: #0b1d51; 
 }
 
 .project-card p {
-  font-style: italic; /* Italicized descriptions */
+  font-style: italic; 
   margin-bottom: 0.5rem;
-  color: #1e3a8a; /* Slightly lighter blue */
+  color: #1e3a8a; 
 }
 
 .project-card .tech {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #3b5b9b; /* Tech stack color */
+  color: #3b5b9b;
   margin-bottom: 1rem;
 }
 
 .project-card .btn {
   display: inline-block;
   padding: 0.6rem 1.4rem;
-  background-color: #0b1d51; /* Deep blue */
+  background-color: #0b1d51; 
   color: #fff;
   border-radius: 50px;
   text-decoration: none;
@@ -292,7 +291,7 @@ header .nav-links li a:hover {
 }
 
 .project-card .btn:hover {
-  background-color: #1e90ff; /* Bright blue accent */
+  background-color: #1e90ff;
   transform: scale(1.05);
 }
 
@@ -309,7 +308,7 @@ header .nav-links li a:hover {
 
 .writing-img img {
   width: 100%;
-  max-width: 400px; /* controls size */
+  max-width: 400px;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(30,58,138,0.1);
 }
@@ -338,7 +337,7 @@ header .nav-links li a:hover {
 }
 
 .writing-card {
-  background-color: #ffffff; /* clean white */
+  background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -356,13 +355,13 @@ header .nav-links li a:hover {
 .writing-card h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #0b1d51; /* deep blue */
+  color: #0b1d51; 
   margin-bottom: 0.8rem;
 }
 
 .writing-card p {
   font-style: italic;
-  color: #1e3a8a; /* lighter blue accent */
+  color: #1e3a8a; 
   margin-bottom: 1rem;
 }
 
@@ -378,7 +377,7 @@ header .nav-links li a:hover {
 }
 
 .writing-card .btn:hover {
-  background-color: #1e90ff; /* bright accent blue */
+  background-color: #1e90ff; 
   transform: scale(1.05);
 }
 
@@ -388,13 +387,13 @@ header .nav-links li a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center; /* center all pills */
+  justify-content: center; 
   margin-top: 1.5rem;
 }
 
 .skills-list span {
-  background-color: #e0e7ff; /* subtle light blue */
-  color: #0b1d51; /* deep blue text */
+  background-color: #e0e7ff; 
+  color: #0b1d51;
   padding: 0.5rem 1rem;
   border-radius: 25px;
   font-weight: 500;
@@ -405,7 +404,7 @@ header .nav-links li a:hover {
 
 .skills-list span:hover {
   transform: translateY(-2px);
-  background-color: #1e90ff; /* bright blue on hover */
+  background-color: #1e90ff; 
   color: #ffffff;
 }
 
@@ -413,12 +412,12 @@ header .nav-links li a:hover {
 .skills h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0b1d51; /* deep blue */
+  color: #0b1d51; 
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* Optional: subtle fade-in animation for skills */
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -434,30 +433,28 @@ header .nav-links li a:hover {
   animation: fadeInUp 0.6s ease forwards;
 }
 
-/* ===== CONTACT ===== */
-/* ===== CONTACT LINKS STYLING ===== */
 
 /* ===== CONTACT TEXT STYLING ===== */
 .contact h2 {
-  font-size: 2.8rem; /* big, bold heading */
+  font-size: 2.8rem;
   font-weight: 700;
-  color: #0b1d51; /* deep blue */
+  color: #0b1d51; 
   margin-bottom: 1.5rem;
 }
 
 .contact p {
   font-size: 1.2rem;
   font-weight: 400;
-  font-style: italic; /* soft, stylish text */
-  color: #0d1b2a; /* dark blue for readability */
+  font-style: italic; 
+  color: #0d1b2a;
   margin-bottom: 1rem;
   line-height: 1.7;
 }
 
-/* Highlight first sentence optionally */
+
 .contact p:first-of-type {
   font-weight: 500;
-  color: #1e3a8a; /* bright blue accent for pop */
+  color: #1e3a8a; 
 }
 
 
@@ -465,8 +462,8 @@ header .nav-links li a:hover {
 .contact-links {
   list-style: none;
   display: flex;
-  gap: 1rem; /* spacing between icons */
-  justify-content: center; /* center horizontally */
+  gap: 1rem; 
+  justify-content: center; 
   margin-top: 1rem;
   padding: 0;
 }
@@ -479,28 +476,28 @@ header .nav-links li a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;   /* size of the icon box */
+  width: 40px;  
   height: 40px;
-  border-radius: 50%; /* circular background effect */
+  border-radius: 50%;
   overflow: hidden;
-  background-color: #ffffff; /* subtle background */
+  background-color: #ffffff; 
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .contact-links a img {
-  width: 60%; /* icon itself is smaller than container */
+  width: 60%; 
   height: auto;
 }
 
 .contact-links a:hover {
-  transform: scale(1.1); /* slight grow on hover */
+  transform: scale(1.1);
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  background-color: #1e90ff; /* bright blue accent on hover */
+  background-color: #1e90ff; 
 }
 
 .contact-links a:hover img {
-  filter: brightness(0) invert(1); /* makes icon white on hover */
+  filter: brightness(0) invert(1); 
 }
 
 /* ===== RESPONSIVE ===== */
@@ -513,19 +510,19 @@ header .nav-links li a:hover {
 
 /* ===== FOOTER ===== */
 .footer {
-  background-color: #ffffff; /* clean white background */
+  background-color: #ffffff; 
   padding: 2rem 0;
-  border-top: 1px solid #e0e7ff; /* subtle separation line */
-  color: #0b1d51; /* deep blue text */
+  border-top: 1px solid #e0e7ff; 
+  color: #0b1d51; 
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between; /* text left, icons right */
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* wrap on smaller screens */
+  flex-wrap: wrap; 
 }
 
 .footer-content p {
