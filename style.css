@@ -61,6 +61,41 @@ header .nav-links li a:hover {
   color: #1e90ff; 
   transform: translateY(-2px); 
 }
+
+
+/* ===== THEME TOGGLE BUTTON ===== */
+.theme-btn {
+  background-color: var(--accent-color, #1e90ff);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-btn:hover {
+  background-color: #0b1d51;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust position for smaller screens */
+@media screen and (max-width: 768px) {
+  .theme-btn {
+    margin-top: 1rem;
+  }
+}
+
+
+
+
 /* ===== HERO SECTION ===== */
 .hero {
   background-color: #ffffff; 
@@ -572,4 +607,22 @@ header .nav-links li a:hover {
     align-items: center;
     gap: 1rem;
   }
+}
+
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+  background-color: #0b0c10;
+  color: #f1f1f1;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #111;
+  color: #eee;
+}
+
+body.dark-mode .theme-btn {
+  background-color: #ffd700;
+  color: #111;
 }
