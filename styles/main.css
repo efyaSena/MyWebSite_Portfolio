@@ -715,3 +715,178 @@ body.dark-mode .theme-btn {
   background-color: #ffd700;
   color: #111;
 }
+
+
+/* ===============================
+   PROJECT BUTTON FIX (Live Demo + GitHub)
+   Add at bottom — do not remove anything above
+================================ */
+
+/* If your buttons are inside .featured-links (Featured Project) */
+.featured-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* If your buttons are inside .project-links (regular project cards) */
+.project-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Make BOTH buttons the same pill style */
+.featured-links .btn,
+.project-links .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Ensure outline button matches pill look perfectly */
+.featured-links .btn.btn-outline,
+.project-links .btn.btn-outline {
+  border-radius: 999px;
+}
+
+/* Optional: on small screens stack nicely */
+@media screen and (max-width: 480px) {
+  .featured-links,
+  .project-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .featured-links .btn,
+  .project-links .btn {
+    width: 100%;
+  }
+}
+
+
+/* ===== PROJECT CARD BUTTON ROW (fixes blue link issue) ===== */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* make sure project links never look like default links */
+.project-links a {
+  text-decoration: none;
+}
+
+/* ensure both buttons look consistent */
+.project-links .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* if anything overrides outline button inside cards, force it */
+.project-card .btn.btn-outline {
+  background: transparent !important;
+  border: 2px solid #0b1d51 !important;
+  color: #0b1d51 !important;
+}
+
+.project-card .btn.btn-outline:hover {
+  background: #0b1d51 !important;
+  color: #ffffff !important;
+}
+
+
+/* FORCE Live Demo + GitHub to be buttons in project cards */
+.project-card .project-links a.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.6rem 1.4rem !important;
+  border-radius: 50px !important;
+  background-color: #0b1d51 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.project-card .project-links a.btn:hover {
+  background-color: #1e90ff !important;
+  transform: scale(1.05) !important;
+}
+
+.project-card .project-links a.btn.btn-outline {
+  background: transparent !important;
+  border: 2px solid #0b1d51 !important;
+  color: #0b1d51 !important;
+}
+
+.project-card .project-links a.btn.btn-outline:hover {
+  background: #0b1d51 !important;
+  color: #fff !important;
+}
+
+
+/* ===============================
+   FIX: make BOTH Live Demo + GitHub show as pill buttons
+   Works anywhere .project-links exists (featured + normal cards)
+================================ */
+
+.project-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* kill default link look */
+.project-links a {
+  text-decoration: none !important;
+}
+
+/* base button look (Live Demo) */
+.project-links a.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 22px !important;
+  border-radius: 999px !important;
+  background: #0b1d51 !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  border: 2px solid #0b1d51 !important;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-links a.btn:hover {
+  background: #1e90ff !important;
+  border-color: #1e90ff !important;
+  transform: scale(1.05) !important;
+}
+
+/* outline button look (GitHub) */
+.project-links a.btn.btn-outline {
+  background: transparent !important;
+  color: #0b1d51 !important;
+  border: 2px solid #0b1d51 !important;
+}
+
+.project-links a.btn.btn-outline:hover {
+  background: #0b1d51 !important;
+  color: #fff !important;
+  transform: scale(1.05) !important;
+}
