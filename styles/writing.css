@@ -1,0 +1,164 @@
+/* =========================
+   BAD GIRLS BIBLE STYLE BLOG
+========================= */
+
+.blog-body {
+  background: #ffffff;
+  color: #111;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* ===== TOP BAR ===== */
+.blog-top {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 10;
+}
+
+.blog-top-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-icon {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.blog-brand h1 {
+  font-size: 34px;
+  margin: 0;
+  text-align: center;
+}
+
+.blog-brand p {
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.7;
+  margin: 4px 0 0;
+}
+
+/* ===== MAIN WRAP ===== */
+.blog-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 30px 16px 80px;
+}
+
+.blog-back {
+  display: inline-block;
+  margin-bottom: 24px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* ===== INTRO ===== */
+.blog-intro p {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 70ch;
+  margin-bottom: 18px;
+}
+
+/* ===== POSTS ===== */
+.blog-post {
+  padding: 32px 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.blog-related {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.blog-related a {
+  color: #d1006f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.blog-post h2 {
+  font-size: 34px;
+  margin: 0 0 10px;
+}
+
+.blog-sub {
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+/* ===== TEXT ===== */
+.blog-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.blog-note {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.blog-link a {
+  color: #d1006f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .blog-post h2 {
+    font-size: 28px;
+  }
+
+  .blog-intro p,
+  .blog-text p {
+    font-size: 17px;
+  }
+}
+.blog-top{
+  position: relative;
+  padding: 28px 18px 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+/* ☰ on the left */
+.nav-trigger{
+  position: absolute;
+  left: 18px;
+  top: 24px;
+  border: 0;
+  background: transparent;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* centered title + sub */
+.blog-center{
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.blog-title{
+  margin: 0;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.blog-sub{
+  margin: 8px 0 0;
+  font-size: 16px;
+  font-style: italic;
+  opacity: 0.75;
+}

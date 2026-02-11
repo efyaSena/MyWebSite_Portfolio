@@ -172,47 +172,63 @@
   <div class="writing-content">
     <!-- Image on Left -->
     <div class="writing-img">
-      <img src="media/IWS pic.jpg" alt="Writing illustration">
+      <img src="media/IWS pic.jpg" alt="Writing illustration" />
     </div>
 
-    
     <div class="writing-text">
-  <h2>I Write Sometimes ✍🏽</h2>
-  <p class="intro">
-    Beyond code, I express myself in words. Sometimes they turn into poems, short stories, 
-    and other times into reflections that live rent-free in my Notes app.
-  </p>
-  <p>
-    When I’m not coding, I write. Words, like code, can build worlds — short stories, poems, 
-    and musings live under a side project I call <strong>Endless Tales</strong>. 
-    Soon, it’ll have a digital home of its own 🌙.
-  </p>
-  <p>
-    Here’s a glimpse into that world.
-  </p>
-</div>
+      <h2>I Write Sometimes ✍🏽</h2>
 
-  
-  <div class="writing-grid">
-    <div class="writing-card">
-      <h3>“my next project”</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <a href="#" class="btn">Read</a>
+      <p class="intro">
+        Beyond code, I express myself in words. Sometimes they turn into poems, short stories,
+        and other times into reflections that live rent-free in my Notes app.
+      </p>
+
+      <p>
+        When I’m not coding, I write. Words, like code, can build worlds — short stories, poems,
+        and musings living inside a litle side project I got going on.
+        it’s got a digital home on its own .
+      </p>
+<button type="button" class="glimpse-btn" onclick="window.location.href='./writing.html'">
+  Here’s a glimpse into that world <span class="glimpse-arrow">▾</span>
+</button>
+
+
+
     </div>
-    <div class="writing-card">
-      <h3>“my next project”</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <a href="#" class="btn">Read</a>
-    </div>
-    <div class="writing-card">
-      <h3>“my next project”</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <a href="#" class="btn">Read</a>
+  </div>
+
+  <div id="writing-drop" class="writing-drop">
+    <div class="writing-grid">
+      <div class="writing-card">
+        <h3>Endless Tales.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" class="btn">Read</a>
+      </div>
+
+      <div class="writing-card series-card">
+        <h3>Naughty Nectar Series</h3>
+
+        <p class="series-tag">
+          Short writings tied to flavour, mood, and moments.
+          Updated gradually.
+        </p>
+
+        <p>
+          An ongoing series. Raw. Intimate. Unfiltered.
+          A collection of desire, damage, and intimacy.
+        </p>
+
+        <a href="./naughty-nectar.html" class="btn">Open</a>
+      </div>
+
+      <div class="writing-card">
+        <h3>“my next project”</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" class="btn">Read</a>
+      </div>
     </div>
   </div>
 </section>
-
-
 
 
   <!-- ===== TECH STACK ===== -->
@@ -305,5 +321,8 @@
 
 
  <script src="scripts/main.js"></script>
+
+ <script src="scripts/writing-drop.js"></script>
+
 </body>
 </html>

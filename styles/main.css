@@ -351,7 +351,9 @@ header .nav-links li a:hover {
 .writing-text {
   flex: 1;
   font-style: italic;
+  max-width: 62ch;
 }
+
 
 .writing-text h2 {
   font-size: 2.5rem;
@@ -455,10 +457,12 @@ header .nav-links li a:hover {
 /* ===== WRITING GRID CARDS ===== */
 .writing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  margin-top: 3rem;
+  align-items: flex-start;
 }
+
 
 .writing-card {
   background-color: #ffffff;
@@ -889,4 +893,601 @@ body.dark-mode .theme-btn {
   background: #0b1d51 !important;
   color: #fff !important;
   transform: scale(1.05) !important;
+}
+
+
+.series-card {
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.08);
+}
+
+.series-tag {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: -6px;
+}
+
+.series-section {
+  margin-top: 3rem;
+  padding-top: 1rem;
+}
+
+.series-head h2 {
+  margin-bottom: 0.25rem;
+}
+
+.series-sub {
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+}
+
+.series-entry {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.03);
+}
+
+.series-entry h4 {
+  margin: 0 0 6px;
+}
+
+.series-date {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* ===== Naughty Nectar Series page ===== */
+.nns-body {
+  background: #050505;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* MAIN WRAPPER — give it more breathing room */
+.nns-wrap {
+  max-width: 960px;              /* was 860px */
+  margin: 0 auto;
+  padding: 36px 22px 100px;      /* more vertical space */
+}
+
+/* TOP BAR */
+.nns-top {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 22px;
+}
+
+.nns-back {
+  text-decoration: none;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.nns-back:hover {
+  opacity: 1;
+}
+
+/* HEADER — keep it airy */
+.nns-header {
+  padding: 24px 0 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 32px;
+}
+
+.nns-title {
+  font-size: 2.2rem;
+  margin: 0 0 10px;
+}
+
+.nns-sub {
+  margin: 0;
+  opacity: 0.75;
+  max-width: 60ch;              /* allow longer breath */
+  line-height: 1.6;
+}
+
+/* LIST — THIS IS IMPORTANT */
+.nns-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;                    /* more separation */
+}
+
+/* ENTRY — make it feel like a “world”, not a card */
+.nns-entry {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 28px 26px;           /* more internal space */
+  background: rgba(255, 255, 255, 0.035);
+}
+
+/* ENTRY HEADER */
+.nns-entry-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.nns-entry-title {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.nns-entry-date {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  white-space: nowrap;
+}
+
+/* MAIN TEXT — DO NOT CONSTRAIN */
+.nns-entry-text {
+  max-width: 70ch;              /* KEY: prevents “short boxed” look */
+}
+
+.nns-entry-text p {
+  margin: 0 0 16px;
+  line-height: 1.75;
+}
+
+/* DIVIDER */
+.nns-divider {
+  text-align: center;
+  opacity: 0.7;
+  letter-spacing: 0.15em;
+  margin: 28px 0;
+}
+
+/* STATES */
+.muted {
+  opacity: 0.65;
+}
+
+.nns-locked {
+  opacity: 0.8;
+}
+@media (max-width: 900px) {
+  .writing-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+.writing-content{
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.writing-img{
+  flex: 1;
+}
+
+.writing-img img{
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(30,58,138,0.1);
+}
+
+.writing-text{
+  flex: 1;
+  max-width: 62ch;
+}
+
+.writing-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 0;
+}
+
+@media (max-width: 900px){
+  .writing-content{
+    flex-direction: column;
+  }
+  .writing-grid{
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .writing-text{
+    max-width: 100%;
+  }
+}
+/* ===== WRITING DROPDOWN (clean reveal) ===== */
+.writing-drop{
+  margin-top: 14px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #0b1d51;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.writing-drop:hover{
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.drop-arrow{
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+/* hidden by default */
+.writing-drop-area{
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: max-height 0.45s ease, opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* open state */
+.writing-drop-area.open{
+  max-height: 1400px; /* big enough for your cards */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.writing-drop.open .drop-arrow{
+  transform: rotate(180deg);
+}
+/* ===== Writing Drop Button ===== */
+.writing-toggle {
+  margin-top: 1.2rem;
+  background: none;
+  border: none;
+  padding: 0;
+  font-style: italic;
+  font-size: 1rem;
+  color: #1e3a8a;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.writing-toggle:hover {
+  text-decoration: underline;
+}
+
+.writing-toggle .chevron {
+  transition: transform 0.3s ease;
+}
+
+/* rotate arrow when open */
+.writing-toggle.open .chevron {
+  transform: rotate(180deg);
+}
+
+/* ===== Drop Area ===== */
+.writing-drop {
+  margin-top: 1.5rem;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+}
+
+/* when opened */
+.writing-drop.open {
+  max-height: 1200px; /* enough space for cards */
+}
+/* ===== Writing Drop Interaction ===== */
+
+/* button look */
+.glimpse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #0b1d51;
+  background: #f2f4f8;
+  border-radius: 999px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background 0.3s ease;
+}
+
+.glimpse-btn:hover {
+  background: #e6e9f2;
+}
+
+/* arrow animation */
+.glimpse-btn span {
+  transition: transform 0.3s ease;
+}
+
+/* hide cards initially */
+.writing-grid {
+  display: none;
+  margin-top: 2.5rem;
+}
+
+/* when open */
+.writing.open .writing-grid {
+  display: grid;
+}
+
+/* rotate arrow */
+.writing.open .glimpse-btn span {
+  transform: rotate(180deg);
+}
+.glimpse-btn {
+  margin-top: 18px;
+  background: #e9eef7;
+  border: 0;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-style: italic;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.writing-drop {
+  margin-top: 18px;
+  display: none;
+}
+
+section.writing.open .writing-drop {
+  display: block;
+}
+/* Button look */
+.glimpse-btn{
+  border: none;
+  background: #eef2ff;
+  color: #0b1d51;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+/* Drop hidden by default */
+.writing-drop{
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .5s ease, opacity .3s ease;
+}
+
+/* When section is open, show drop */
+.writing.open .writing-drop{
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: 24px;
+}
+
+/* Arrow rotates */
+.writing.open .glimpse-arrow{
+  display: inline-block;
+  transform: rotate(180deg);
+  transition: transform .2s ease;
+}
+.glimpse-arrow{
+  display:inline-block;
+  transition: transform .2s ease;
+}
+.glimpse-btn {
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+
+  background: #e9edf5;
+  color: #0b1d51;
+  font-style: italic;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 999px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glimpse-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(11, 29, 81, 0.08);
+}
+
+.glimpse-btn:active {
+  transform: scale(0.99);
+}
+
+.glimpse-arrow {
+  font-style: normal;
+  opacity: 0.75;
+}
+/* ===== Writing Hub (writing.html) ===== */
+.writing-hub {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0 90px;
+}
+
+.writing-hub-top {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 26px;
+}
+
+.writing-hub-head .nns-title {
+  margin: 0 0 8px;
+}
+
+.writing-hub-head .nns-sub {
+  margin: 0;
+  max-width: 65ch;
+}
+
+.writing-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.writing-hub-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(11, 29, 81, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.writing-hub-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.writing-hub-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #0b1d51;
+}
+
+.chip {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(30, 144, 255, 0.12);
+  color: #0b1d51;
+  border: 1px solid rgba(30, 144, 255, 0.2);
+  white-space: nowrap;
+}
+
+.chip-soon {
+  opacity: 0.75;
+}
+
+.writing-hub-card .btn {
+  margin-top: 8px;
+  align-self: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .writing-hub-top {
+    grid-template-columns: 1fr;
+  }
+  .writing-hub-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== STORY BLOG (BadGirlsBible vibe) ===== */
+.story-blog {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 32px 18px 90px;
+}
+
+.story-blog-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.blog-back {
+  text-decoration: none;
+  font-weight: 700;
+  color: #0b1d51;
+  opacity: 0.8;
+}
+
+.blog-back:hover {
+  opacity: 1;
+}
+
+.blog-brand {
+  flex: 1;
+}
+
+.blog-title {
+  font-size: 2.2rem;
+  margin: 0 0 4px;
+  color: #0b1d51;
+  font-weight: 800;
+}
+
+.blog-tagline {
+  margin: 0;
+  font-style: italic;
+  color: #1e3a8a;
+  opacity: 0.85;
+}
+
+.story-blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(11, 29, 81, 0.08);
+}
+
+.story-item {
+  padding: 4px 0 18px;
+  border-bottom: 1px solid rgba(11, 29, 81, 0.08);
+}
+
+.story-title {
+  font-size: 1.7rem;
+  margin: 0 0 10px;
+  color: #0b1d51;
+  font-weight: 800;
+}
+
+.story-excerpt {
+  margin: 0 0 12px;
+  color: #0d1b2a;
+  font-style: italic;
+  line-height: 1.85;
+  max-width: 70ch;
+}
+
+.story-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #1e90ff;
+  font-weight: 700;
+}
+
+.story-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .blog-title { font-size: 1.9rem; }
+  .story-title { font-size: 1.45rem; }
 }
