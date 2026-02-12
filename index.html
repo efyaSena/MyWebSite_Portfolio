@@ -55,7 +55,7 @@
     <div class="about-content">
       <div class="about-text">
         <p>
-          Hello again 👋🏽! I’m Efya or Sena. My <strong>Friends</strong> call me Remedy (Rems) or BabyDaddy, LOL —as a self-taught survivalist 💪🏽 who’s mastered the fine art of
+          Hello again 👋🏽! I’m Efya or Sena. My <strong>Friends</strong> call me Remedy (Rems) or BabyDaddy,as a self-taught survivalist 💪🏽 who’s mastered the fine art of
           <strong>Googling errors</strong>, reading documentation 📚, and pushing through those <strong>“why isn’t this working?!”</strong> moments,
         </p>
 
@@ -188,7 +188,10 @@
         and musings living inside a litle side project I got going on.
         it’s got a digital home on its own .
       </p>
-<button type="button" class="glimpse-btn" onclick="window.location.href='./writing.html'">
+<button
+  type="button"
+  class="glimpse-btn"
+  id="glimpseLink">
   Here’s a glimpse into that world <span class="glimpse-arrow">▾</span>
 </button>
 
@@ -323,6 +326,28 @@
  <script src="scripts/main.js"></script>
 
  <script src="scripts/writing-drop.js"></script>
+
+ <!-- ✅ CONTENT WARNING MODAL -->
+<div class="cw-overlay" id="cwOverlay" aria-hidden="true">
+  <div class="cw-modal" role="dialog" aria-modal="true" aria-labelledby="cwTitle">
+    <h3 class="cw-title" id="cwTitle">Content Warning</h3>
+
+    <p class="cw-text">
+      This section contains explicit, adult-themed writing (18+). Proceed only if you’re comfortable.
+    </p>
+
+    <div class="cw-actions">
+      <button type="button" class="cw-btn cw-btn--ghost" id="cwCancel">Maybe later</button>
+      <button type="button" class="cw-btn cw-btn--primary" id="cwProceed">Enter</button>
+    </div>
+
+    <label class="cw-check">
+      <input type="checkbox" id="cwRemember" />
+      <span>Don’t show this again</span>
+    </label>
+  </div>
+</div>
+
 
 </body>
 </html>

@@ -8,41 +8,34 @@
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* ===== TOP BAR ===== */
-.blog-top {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  z-index: 10;
-}
 
-.blog-top-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.blog-icon {
-  font-size: 22px;
-  cursor: pointer;
-}
 
-.blog-brand h1 {
-  font-size: 34px;
-  margin: 0;
+
+
+/* CENTER — title + series */
+.story-title-wrap {
   text-align: center;
 }
 
-.blog-brand p {
+.story-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.story-subtitle {
+  margin-top: 4px;
   font-size: 14px;
   font-style: italic;
   opacity: 0.7;
-  margin: 4px 0 0;
 }
+
+
+
+
+
 
 /* ===== MAIN WRAP ===== */
 .blog-wrap {
@@ -161,4 +154,1703 @@
   font-size: 16px;
   font-style: italic;
   opacity: 0.75;
+}
+
+/* ===== Episode background (lips watermark) ===== */
+.episode-bg {
+  position: relative;
+  padding: 48px 0;
+}
+
+.episode-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../media/redLipsPic.jpeg"); /* change to .jpg if needed */
+  background-repeat: no-repeat;
+  background-position: center 70%;
+  background-size: min(520px, 70vw);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* keeps text above the background */
+.episode-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* optional: give the episode a clean “blog section” feel */
+.episode {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.episode-title {
+  font-size: 28px;
+  margin: 0 0 18px;
+}
+
+/* ===== EPISODE BACKGROUND IMAGE ===== */
+.episode {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+}
+
+.episode::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../media/redLipsPic.jpeg");
+  background-repeat: no-repeat;
+  background-position: center 70%;
+  background-size: min(520px, 70vw);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.episode > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ===== Episode Intro (Blog Style) ===== */
+.episode-intro {
+  max-width: 720px;
+  margin: 2.5rem auto 3.5rem;
+  padding: 1.8rem 2.2rem;
+  font-style: italic;
+  font-weight: 500;              /* 👈 makes it bolder */
+  line-height: 1.85;
+  color: #111;
+  background: #fafafa;
+  border-left: 4px solid #111;
+}
+
+.episode-intro p {
+  margin: 0;
+}
+
+
+
+/* force header layout: title centered, icons left + right */
+.blog-top-inner{
+  position: relative;
+  justify-content: center;
+}
+
+.blog-brand{
+  text-align: center;
+}
+
+/* both icons become absolute */
+.blog-top-inner .blog-icon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* first icon = LEFT (back) */
+.blog-top-inner .blog-icon:first-child{
+  left: 16px;
+}
+
+/* last icon = RIGHT (menu) */
+.blog-top-inner .blog-icon:last-child{
+  right: 16px;
+}
+
+
+
+/* back button (wrap it like a proper button) */
+.back-btn{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn:hover{
+  background: rgba(0,0,0,0.04);
+}
+
+/* title center */
+.story-title-wrap{
+  text-align: center;
+}
+
+.story-title{
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.05;
+}
+
+.story-subtitle{
+  margin: 4px 0 0;
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+/* hamburger / menu button (right side) */
+.menu-btn{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+}
+
+.menu-btn:hover{
+  background: rgba(0,0,0,0.04);
+}
+
+
+/* BACK BUTTON — ARROW ONLY */
+.back-btn{
+  font-size: 0;              /* hides text */
+}
+
+.back-btn::before{
+  content: "←";              /* arrow only */
+  font-size: 18px;
+}
+
+
+
+/* ======================
+   STORY HEADER (FINAL)
+====================== */
+.story-header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  height: 76px;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-header .back-btn{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0;
+}
+.story-header .back-btn::before{
+  content: "←";
+  font-size: 18px;
+  color: #111;
+}
+
+.story-title-wrap{
+  text-align: center;
+}
+
+.story-title{
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.story-subtitle{
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.story-header .menu-btn{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+
+  cursor: pointer;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* === HEADER OVERRIDE (ONLY THIS SECTION) === */
+.story-header{
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  background: #fff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+
+  height: 76px !important;
+  padding: 0 20px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  /* THIS IS THE KEY */
+  position: relative !important;
+}
+
+/* LEFT */
+.story-header .back-btn{
+  position: absolute !important;
+  left: 20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* RIGHT (FORCE IT!) */
+.story-header .menu-btn{
+  position: absolute !important;
+  right: 20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* CENTER */
+.story-header .story-title-wrap{
+  text-align: center !important;
+  margin: 0 auto !important;
+  width: fit-content !important;
+}
+
+
+/* TEST — if you don't see this, writing.css is NOT loading */
+.story-header{
+  background: rgb(160, 128, 128) !important;
+  outline: 6px solid red !important;
+}
+
+/* ===== FINAL HEADER FIX (works with YOUR HTML) ===== */
+.story-header{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #fff !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+
+  height: 76px;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+/* LEFT ARROW */
+.story-header .back-btn{
+  position: absolute !important;
+  left: 20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CENTER TITLE */
+.story-header .story-head{
+  text-align: center;
+}
+
+.story-header .story-title{
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.story-header .story-series{
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* RIGHT MENU */
+.story-header .menu-toggle{
+  position: absolute !important;
+  right: 20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+
+/* ===== INTRO HERO (BadGirlsBible vibe) ===== */
+.story-intro{
+  padding: 44px 16px 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.story-intro-inner{
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* left text */
+.story-intro-copy p{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.9;
+  font-style: italic;
+  font-weight: 600;            /* bold + still italic */
+  color: #111;
+  max-width: 62ch;
+}
+
+/* right image */
+.story-intro-art{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.story-intro-art img{
+  width: min(360px, 100%);
+  height: auto;
+  display: block;
+  opacity: 0.95;
+}
+
+/* mobile */
+@media (max-width: 820px){
+  .story-intro-inner{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .story-intro-art{
+    justify-content: center;
+  }
+  .story-intro-copy p{
+    max-width: 70ch;
+    font-size: 17px;
+  }
+}
+
+
+/* ===== SENSITIVE WORD HIGHLIGHT ===== */
+.sens {
+  color: #b1005a;          /* deep sensual pink */
+  font-weight: 600;
+}
+
+.sens-soft {
+  color: #6b2d5c;          /* muted wine */
+  font-style: italic;
+}
+
+.sens-dark {
+  color: #111;
+  background: rgba(177, 0, 90, 0.08);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+
+/* =========================
+   STORY — CLEAN BLOG FLOW
+========================= */
+
+.writing-post {
+  max-width: 760px;
+  margin: 0 auto 5rem;
+}
+
+.writing-title {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.02em;
+}
+
+.writing-body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.85;
+  color: #111;
+}
+
+.writing-body p {
+  margin-bottom: 1.6rem;
+}
+
+/* keep wildness, make it intentional */
+.writing-body em {
+  font-style: italic;
+}
+
+.writing-body strong {
+  font-weight: 700;
+}
+
+/* highlight sensitive words */
+.writing-body .heat {
+  color: #b0003a;
+  font-weight: 600;
+}
+
+/* breathing pauses */
+.writing-body .pause {
+  display: block;
+  margin: 2.5rem 0;
+  text-align: center;
+  opacity: 0.5;
+  letter-spacing: 0.2em;
+}
+
+
+/* ===== STORY POST ===== */
+.writing-post {
+  max-width: 760px;
+  margin: 0 auto 120px;
+  padding: 0 16px;
+}
+
+/* Title */
+.writing-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  margin: 80px 0 60px;
+}
+
+.writing-body {
+  font-size: 19px;
+  line-height: 1.95;
+  letter-spacing: 0.01em;
+  color: #111;
+}
+
+/* Paragraph spacing */
+.writing-body p {
+  margin: 0 0 26px;
+}
+
+.writing-body p:has(br),
+.writing-body p:contains("Slowly.") {
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
+
+/* ===== STORY TYPOGRAPHY (Bad Girls Style) ===== */
+
+.writing-post {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.writing-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.writing-body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.85;
+  color: #111;
+}
+
+/* paragraph rhythm */
+.writing-body p {
+  margin: 0 0 1.4rem;
+}
+
+/* short punch lines */
+.writing-body p:has(br),
+.writing-body p:has(—) {
+  margin-bottom: 1rem;
+}
+
+/* soft emphasis (BadGirls feel) */
+.writing-body em,
+.writing-body strong {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* optional: softer first paragraph */
+.writing-body p:first-child {
+  font-size: 19px;
+}
+
+
+/* ===== STORY BACKGROUND IMAGE ===== */
+
+.writing-post {
+  position: relative;
+  padding: 4rem 0;
+}
+
+/* background image */
+.writing-post::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../media/blacklegs.jpeg"); /* 👈 change filename */
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: min(480px, 70vw);
+
+  opacity: 0.12; /* subtle, sensual */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* keep text above image */
+.writing-post > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   STORY SECTION (ONLY)
+========================= */
+.writing-post{
+  max-width: 860px;
+  margin: 28px auto 40px;
+  padding: 26px 22px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+}
+
+/* header */
+.writing-post-head{
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 16px;
+}
+
+.writing-title{
+  margin: 0;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.writing-meta{
+  margin: 8px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+.dot{ opacity: 0.5; }
+
+.chip{
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.03);
+}
+
+.chip-ongoing{
+  border-color: rgba(209,0,111,0.22);
+  background: rgba(209,0,111,0.06);
+}
+
+/* intro strip like blog */
+.writing-intro{
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0 10px;
+}
+
+.writing-intro .intro-line{
+  width: 4px;
+  min-height: 44px;
+  background: #111;
+  border-radius: 10px;
+}
+
+.writing-intro p{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  font-style: italic;
+  font-weight: 650;
+}
+
+/* body typography */
+.writing-body{
+  font-size: 18px;
+  line-height: 1.85;
+  max-width: 72ch;
+}
+
+.writing-body p{
+  margin: 0 0 16px;
+}
+
+.writing-body .beat{
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.writing-body .pull-quote{
+  margin: 18px 0;
+  padding: 14px 16px;
+  border-left: 4px solid #111;
+  background: rgba(0,0,0,0.03);
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* list */
+.writing-list{
+  margin: 8px 0 18px 18px;
+}
+
+.writing-list li{
+  margin: 8px 0;
+}
+
+/* sensitive word highlight */
+.hot{
+  color: #d1006f;
+  font-weight: 800;
+}
+
+/* section break */
+.story-break{
+  border: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.12);
+  margin: 22px 0;
+}
+
+/* =========================
+   BACKGROUND IMAGE (ONLY THIS STORY)
+   Put your image path here
+========================= */
+.writing-post--bg{
+  position: relative;
+  overflow: hidden;
+}
+
+.writing-post--bg::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./media/opo.jpeg"); /* <-- change this */
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.writing-post--bg > *{
+  position: relative;
+  z-index: 1;
+}
+
+/* mobile */
+@media (max-width: 700px){
+  .writing-post{ padding: 22px 16px; }
+  .writing-title{ font-size: 28px; }
+  .writing-body{ font-size: 17px; }
+}
+
+
+/* ===== BAD GIRL STORY FONT FIX ===== */
+
+.writing-post {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+/* body text */
+.writing-body p {
+  font-size: 18px;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+/* title */
+.writing-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* pull quotes */
+.pull-quote {
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* subtle emphasis words */
+.hot {
+  color: #b0005f; /* deep sensual pink */
+  font-weight: 600;
+}
+
+
+/* ===== Story section with background ===== */
+.writing-post--bg {
+  position: relative;
+  padding: 5rem 0;
+}
+
+/* background image layer */
+.writing-post--bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../media/opo.jpeg"); /* 👈 change this */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  opacity: 0.15; /* BadGirlsBible subtlety */
+  z-index: 0;
+}
+
+/* keep text above background */
+.writing-post--bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* ===== NEXT DROP / ANTICIPATION BLOCK ===== */
+.writing-teaser {
+  max-width: 620px;
+  margin: 4rem auto 2rem;
+  padding: 2.5rem 2rem;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+
+  font-style: italic;
+}
+
+.writing-teaser p {
+  margin: 0 0 1.2rem;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.writing-teaser p:last-child {
+  margin-bottom: 0;
+}
+
+/* subtle emphasis */
+.writing-teaser .muted {
+  opacity: 0.55;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  margin-top: 1.8rem;
+}
+
+/* BadGirls-style pause */
+.writing-teaser p:nth-child(3) {
+  font-weight: 600;
+}
+/* ===== FOOTER (WRITING STYLE) ===== */
+.writing-footer{
+  margin-top: 6rem;
+  padding: 3.5rem 1.5rem 4rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.writing-footer-inner{
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.writing-socials{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: 14px;
+}
+
+.writing-socials a{
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
+  color: #111;
+  opacity: 0.75;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.writing-socials a:hover{
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.writing-socials .dot{
+  opacity: 0.25;
+}
+
+.writing-copy{
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.10em;
+  opacity: 0.45;
+}
+
+
+/* ===== WRITING FOOTER (portfolio-like icons) ===== */
+.writing-footer {
+  padding: 56px 16px 36px;
+  border-top: 1px solid rgba(0,0,0,0.10);
+  background: #fff;
+}
+
+.writing-footer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.writing-footer-line {
+  margin: 0 0 18px;
+  font-style: italic;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.writing-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.writing-footer-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.writing-footer-link:hover {
+  transform: translateY(-2px);
+  background: rgba(0,0,0,0.03);
+}
+
+.writing-footer-link img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+.writing-footer-copy {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+  transition: right 0.35s ease;
+  z-index: 9999;
+}
+
+.hamburger-menu.active {
+  right: 0;
+}
+
+.hamburger-inner {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background: #fff;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Close button */
+.hamburger-close {
+  align-self: flex-end;
+  font-size: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Links */
+.hamburger-link {
+  text-decoration: none;
+  color: #111;
+}
+
+.hamburger-link strong {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.hamburger-link span {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+
+
+/* =========================
+   SIMPLE SLIDE MENU (BLOG)
+========================= */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(320px, 85vw);
+  background: #1f2937; /* deep gray like BadGirls vibe */
+  color: #fff;
+  z-index: 9999;
+  padding: 18px 16px;
+
+  transform: translateX(-105%);
+  transition: transform 220ms ease;
+
+  box-shadow: 10px 0 40px rgba(0,0,0,0.28);
+}
+
+.side-menu.is-open {
+  transform: translateX(0);
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 9998;
+}
+
+.menu-close {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu-links {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.menu-link {
+  display: block;
+  padding: 12px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.menu-link:hover {
+  background: rgba(255,255,255,0.10);
+}
+
+.menu-about {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+
+.menu-title {
+  margin: 0 0 8px;
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+.menu-text {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+
+/* ===== MENU (slide-in) ===== */
+.menu-panel{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(360px, 88vw);
+  height: 100vh;
+  background: #fff;
+  border-left: 1px solid rgba(0,0,0,0.10);
+  box-shadow: -18px 0 40px rgba(0,0,0,0.12);
+  padding: 18px;
+  transform: translateX(110%);
+  transition: transform .25s ease;
+  z-index: 2000;
+}
+
+.menu-panel.open{
+  transform: translateX(0);
+}
+
+.menu-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 1999;
+}
+
+.menu-overlay.open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-close{
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.menu-links{
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.menu-links a{
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fafafa;
+}
+
+.menu-links a:hover{
+  background: #f2f2f2;
+}
+
+
+/* ===== MENU PANEL (VISIBLE CONTENT FIX) ===== */
+.menu-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 2000;
+}
+.menu-overlay.open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-panel{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(340px, 86vw);
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform .28s ease;
+  z-index: 2001;
+
+  border-left: 1px solid rgba(0,0,0,0.12);
+  box-shadow: -16px 0 40px rgba(0,0,0,0.12);
+}
+.menu-panel.open{
+  transform: translateX(0);
+}
+
+/* IMPORTANT: this is what makes it not look empty */
+.menu-inner{
+  padding: 22px 18px;
+  padding-top: 56px; /* leaves space for the X button */
+}
+
+.menu-close{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.menu-heading{
+  margin: 0 0 12px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.menu-links{
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.menu-links a{
+  text-decoration: none;
+  color: #111;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f4f4f5;
+}
+.menu-links a:hover{
+  background: #ededf0;
+}
+
+.menu-title{
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+
+.menu-text{
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.78;
+  font-style: italic;
+}
+
+
+/* ===== FORCE MENU TEXT VISIBLE (OVERRIDES GLOBAL CSS) ===== */
+.menu-panel{
+  color: #111 !important;
+}
+
+.menu-panel *{
+  color: #111 !important;
+  font-size: inherit;
+}
+
+/* fix the close button being an empty box */
+.menu-close{
+  font-size: 18px !important;
+  line-height: 1 !important;
+  color: #111 !important;
+}
+
+
+/* ===== MENU CONTENT LAYOUT (so it doesn't look blank) ===== */
+.menu-panel{
+  background:#fff;
+}
+
+.menu-inner{
+  padding: 72px 22px 28px; /* space under the X */
+  max-width: 320px;
+}
+
+.menu-heading{
+  margin: 0 0 14px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: .6;
+}
+
+.menu-links{
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.menu-links a{
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  background: #fafafa;
+}
+
+.menu-title{
+  margin: 0 0 6px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.menu-text{
+  margin: 0;
+  line-height: 1.7;
+  font-size: 15px;
+  opacity: .85;
+}
+
+
+.menu-panel{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(360px, 86vw);
+  background: #fff;
+  transform: translateX(110%);
+  transition: transform .25s ease;
+  z-index: 9999;
+  overflow: auto;
+}
+
+.menu-panel.open{
+  transform: translateX(0);
+}
+
+.menu-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 9998;
+}
+
+.menu-overlay.open{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-close{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.15);
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu-inner{
+  padding: 80px 22px 28px;
+}
+
+.menu-heading{
+  margin: 0 0 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: .6;
+}
+
+.menu-links{
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.menu-links a{
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  background: #fafafa;
+  color: #111;
+}
+
+.menu-title{
+  margin: 0 0 6px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.menu-text{
+  margin: 0;
+  line-height: 1.7;
+  font-size: 15px;
+  opacity: .85;
+}
+
+
+/* =========================
+   CONTENT WARNING MODAL
+========================= */
+.cw-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.cw-overlay.open{
+  display: flex;
+}
+
+.cw-modal{
+  width: min(520px, 100%);
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px 22px 18px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+  border: 1px solid rgba(0,0,0,0.08);
+  font-family: Georgia, "Times New Roman", serif; /* keeps the blog vibe */
+}
+
+.cw-title{
+  margin: 0 0 10px;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.cw-text{
+  margin: 0 0 16px;
+  line-height: 1.7;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.cw-actions{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.cw-btn{
+  border: 0;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.cw-btn--ghost{
+  background: #f3f4f6;
+  color: #111;
+}
+
+.cw-btn--primary{
+  background: #111;
+  color: #fff;
+}
+
+.cw-check{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.cw-check input{
+  width: 16px;
+  height: 16px;
+}
+
+
+/* =========================
+   ALT STORY STYLE (ONLY "ANOTHER ONE")
+   Scoped to .writing-post--alt
+========================= */
+
+.writing-post--alt{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 18px;
+  padding: 26px 22px;
+  box-shadow: 0 16px 55px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle left accent bar */
+.writing-post--alt::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 4px;
+  background: #111;
+  opacity: 0.9;
+  border-radius: 99px;
+}
+
+/* header spacing */
+.writing-post--alt .writing-post-head{
+  padding-left: 14px;
+  margin-bottom: 18px;
+}
+
+/* title feels different */
+.writing-post--alt .writing-title{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Inter", Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+/* meta line */
+.writing-post--alt .writing-meta{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* chips (slightly different look) */
+.writing-post--alt .chip{
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.writing-post--alt .dot{ opacity: 0.45; }
+
+/* intro strip — different from your other one */
+.writing-post--alt .writing-intro{
+  margin: 18px 0 22px;
+  padding: 14px 14px 14px 14px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.03);
+  border: 1px dashed rgba(0,0,0,0.18);
+}
+
+.writing-post--alt .intro-line{ display: none; } /* kill the old line just for this style */
+
+.writing-post--alt .writing-intro p{
+  margin: 0;
+  font-style: italic;
+  font-weight: 650;
+  line-height: 1.75;
+  max-width: 70ch;
+}
+
+/* body typography — clean blog feel */
+.writing-post--alt .writing-body{
+  padding-left: 14px;
+}
+
+.writing-post--alt .writing-body p{
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 1.9;
+  max-width: 72ch;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* DROP CAP (first paragraph only) */
+.writing-post--alt .writing-body p:first-child::first-letter{
+  float: left;
+  font-size: 58px;
+  line-height: 0.95;
+  font-weight: 900;
+  margin-right: 10px;
+  margin-top: 6px;
+  color: #111;
+}
+
+/* dialogue styling */
+.writing-post--alt .dialogue{
+  font-style: italic;
+  font-weight: 700;
+  padding-left: 14px;
+  border-left: 3px solid rgba(0,0,0,0.2);
+}
+
+/* beats / pauses */
+.writing-post--alt .beat{
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* quotes */
+.writing-post--alt .pull-quote{
+  margin: 18px 0;
+  padding: 16px 16px;
+  border-radius: 14px;
+  background: #111;
+  color: #fff;
+  font-weight: 650;
+  font-style: italic;
+}
+
+/* hot words — different accent than other section */
+.writing-post--alt .hot{
+  color: #b1005a;
+  font-weight: 800;
+}
+
+/* closing line */
+.writing-post--alt .closing-line{
+  margin-top: 18px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+/* mobile */
+@media (max-width: 640px){
+  .writing-post--alt{ padding: 22px 16px; }
+  .writing-post--alt .writing-title{ font-size: 26px; }
+  .writing-post--alt .writing-body p{ font-size: 17px; }
 }

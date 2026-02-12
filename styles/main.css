@@ -1491,3 +1491,65 @@ section.writing.open .writing-drop {
   .blog-title { font-size: 1.9rem; }
   .story-title { font-size: 1.45rem; }
 }
+
+
+
+/* ===== Content Warning Modal ===== */
+.cw-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 9999;
+}
+
+.cw-overlay.open{ display: flex; }
+
+.cw-modal{
+  width: min(520px, 95vw);
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 18px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.22);
+}
+
+.cw-title{
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.cw-text{
+  margin: 0 0 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.cw-check{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.cw-actions{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.cw-btn{
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.cw-btn--ghost{ background: #fff; }
+.cw-btn--solid{ background: #111; color: #fff; border-color: #111; }
