@@ -13,6 +13,8 @@
 <body>
  
   <header>
+    <button class="menu-btn" id="menuBtn">☰</button>
+
     <nav class="container">
       <h1 class="logo">Efya Sena</h1>
       <ul class="nav-links">
@@ -349,6 +351,17 @@
   </div>
 </div>
 
+
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.style.display =
+      navLinks.style.display === "flex" ? "none" : "flex";
+  });
+</script>
 
 </body>
 </html>

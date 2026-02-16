@@ -1,4 +1,20 @@
 
+
+
+/* ✅ mobile-safe defaults */
+* { box-sizing: border-box; }
+
+html, body { width: 100%; overflow-x: hidden; }
+
+img, video { max-width: 100%; height: auto; display: block; }
+
+/* if you use a wrapper container */
+.container {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1553,3 +1569,49 @@ section.writing.open .writing-drop {
 
 .cw-btn--ghost{ background: #fff; }
 .cw-btn--solid{ background: #111; color: #fff; border-color: #111; }
+
+
+/* ===== NAV (DESKTOP DEFAULT) ===== */
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+
+/* ===== NAV (MOBILE) ===== */
+@media (max-width: 768px) {
+
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 14px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    display: none;
+    z-index: 999;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
