@@ -1592,6 +1592,10 @@ section.writing.open .writing-drop {
 
 /* ===== NAV (MOBILE) ===== */
 @media (max-width: 768px) {
+
+  header nav.container {
+    position: relative; /* so the dropdown positions correctly */
+  }
   .nav-links {
     position: absolute;
     top: 64px;
@@ -1613,5 +1617,17 @@ section.writing.open .writing-drop {
 
   .menu-btn {
     display: block;
+  }
+}
+
+
+/* ===== FORCE MOBILE NAV CLOSED BY DEFAULT ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-links.open {
+    display: flex !important;
   }
 }

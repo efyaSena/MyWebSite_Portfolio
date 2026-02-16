@@ -31,7 +31,7 @@ if (themeToggle) {
 
 // ===================
 // ✅ NAV MENU TOGGLE (MOBILE) — class toggle (NO style.display)
-// closes on link click + outside click + ESC
+// starts CLOSED by default, closes on link + outside + ESC, toggles open/close on button
 // ===================
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
@@ -39,24 +39,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!menuBtn || !navLinks) return;
 
-  const openMenu = () => navLinks.classList.add("open");
   const closeMenu = () => navLinks.classList.remove("open");
   const toggleMenu = () => navLinks.classList.toggle("open");
 
-  // Toggle via button
+  // ✅ make sure it NEVER loads open
+  closeMenu();
+
+  // Toggle via button (open + close)
   menuBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // ✅ prevent outside-click handler from instantly closing it
+    e.preventDefault();
+    e.stopPropagation(); // prevent outside-click handler from firing
     toggleMenu();
   });
 
-  // ✅ Close when any nav link is clicked
+  // Close when any nav link is clicked
   navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
+    link.addEventListener("click", () => closeMenu());
   });
 
-  // ✅ Close if tap/click outside (only when open)
+  // Close if click outside (only when open)
   document.addEventListener("click", (e) => {
     if (!navLinks.classList.contains("open")) return;
     if (menuBtn.contains(e.target)) return;
@@ -64,12 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
     closeMenu();
   });
 
-  // ✅ Close on ESC
+  // Close on ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 
-  // Optional: on resize to desktop, ensure menu isn’t stuck “open”
+  // Close when switching back to desktop
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) closeMenu();
   });
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===================
 // ☰ BLOG MENU TOGGLE (WORKING)
+// (toggle button now closes too)
 // ===================
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("menuToggle");
@@ -85,6 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("menuClose");
 
   if (!toggle || !panel || !overlay) return;
+
+  const isOpen = () => panel.classList.contains("open");
 
   const openMenu = () => {
     panel.classList.add("open");
@@ -100,10 +104,24 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   };
 
-  toggle.addEventListener("click", openMenu);
+  const toggleMenu = () => {
+    if (isOpen()) closeMenu();
+    else openMenu();
+  };
+
+  // ✅ clicking the menu button toggles open/close
+  toggle.addEventListener("click", toggleMenu);
+
+  // close on overlay + X
   overlay.addEventListener("click", closeMenu);
   if (closeBtn) closeBtn.addEventListener("click", closeMenu);
 
+  // ✅ close if you click any link inside the panel
+  panel.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", closeMenu);
+  });
+
+  // close on ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
