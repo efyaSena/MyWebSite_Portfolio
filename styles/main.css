@@ -647,10 +647,12 @@ header .nav-links li a:hover {
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 600px) {
   .contact-links {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 1rem;
   }
 }
+
 
 /* ===== FOOTER ===== */
 .footer {
