@@ -32,6 +32,39 @@ if (themeToggle) {
 
 
 // ===================
+// ✅ NAV MENU TOGGLE (MOBILE) — class toggle (NO style.display)
+// ===================
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // Optional nice UX: close menu when you click a link
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+
+    // Optional: close menu if you tap outside (only when open)
+    document.addEventListener("click", (e) => {
+      if (!navLinks.classList.contains("open")) return;
+      if (e.target === menuBtn || menuBtn.contains(e.target)) return;
+      if (e.target === navLinks || navLinks.contains(e.target)) return;
+      navLinks.classList.remove("open");
+    });
+
+    // Optional: close on ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") navLinks.classList.remove("open");
+    });
+  }
+});
+
+
+// ===================
 // ☰ BLOG MENU TOGGLE (WORKING)
 // ===================
 document.addEventListener("DOMContentLoaded", () => {
@@ -103,15 +136,17 @@ document.addEventListener("DOMContentLoaded", () => {
     openModal();
   });
 
-  btnCancel.addEventListener("click", closeModal);
+  if (btnCancel) btnCancel.addEventListener("click", closeModal);
 
-  btnProceed.addEventListener("click", () => {
-    if (remember.checked) {
-      localStorage.setItem(KEY, "1");
-    }
-    closeModal();
-    goToWriting();
-  });
+  if (btnProceed) {
+    btnProceed.addEventListener("click", () => {
+      if (remember && remember.checked) {
+        localStorage.setItem(KEY, "1");
+      }
+      closeModal();
+      goToWriting();
+    });
+  }
 
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) closeModal();

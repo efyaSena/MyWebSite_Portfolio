@@ -1590,7 +1590,6 @@ section.writing.open .writing-drop {
 
 /* ===== NAV (MOBILE) ===== */
 @media (max-width: 768px) {
-
   .nav-links {
     position: absolute;
     top: 64px;
@@ -1606,9 +1605,8 @@ section.writing.open .writing-drop {
     z-index: 999;
   }
 
-  .nav-links a {
-    font-size: 16px;
-    width: 100%;
+  .nav-links.open {
+    display: flex;
   }
 
   .menu-btn {
