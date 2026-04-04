@@ -373,11 +373,7 @@ function App() {
           </li>
 
           <li>
-            <a
-              href="/media/my resume.pdf"
-              download
-              aria-label="Download Resume"
-            >
+            <a href="/media/Resume.pdf" download aria-label="Download Resume">
               <img src="/media/download icon.gif" alt="Download Resume Icon" />
             </a>
           </li>
