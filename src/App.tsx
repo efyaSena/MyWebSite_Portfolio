@@ -3,8 +3,11 @@ import './styles/main.css';
 
 function App() {
   useEffect(() => {
-    const menuBtn = document.getElementById('menuBtn');
+    const menuBtn = document.getElementById('menuBtn') as HTMLButtonElement | null;
     const navLinks = document.querySelector('.nav-links') as HTMLElement | null;
+    const themeToggle = document.getElementById(
+      'theme-toggle',
+    ) as HTMLButtonElement | null;
 
     const glimpseLink = document.getElementById('glimpseLink');
     const cwOverlay = document.getElementById('cwOverlay');
@@ -16,10 +19,48 @@ function App() {
 
     const remembered = localStorage.getItem('cwAccepted') === 'true';
 
+    const applyTheme = (theme: 'dark' | 'light') => {
+      const isDark = theme === 'dark';
+      document.body.classList.toggle('dark-mode', isDark);
+
+      if (themeToggle) {
+        themeToggle.setAttribute(
+          'aria-label',
+          isDark ? 'Switch to light mode' : 'Switch to dark mode',
+        );
+      }
+    };
+
+    const closeMenu = () => {
+      if (!navLinks) return;
+      navLinks.classList.remove('open');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+    };
+
     const toggleMenu = () => {
       if (!navLinks) return;
-      navLinks.style.display =
-        navLinks.style.display === 'flex' ? 'none' : 'flex';
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn?.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    const toggleTheme = () => {
+      const nextTheme = document.body.classList.contains('dark-mode')
+        ? 'light'
+        : 'dark';
+      localStorage.setItem('theme', nextTheme);
+      applyTheme(nextTheme);
+    };
+
+    const handleDocumentClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (!navLinks?.classList.contains('open')) return;
+      if (menuBtn?.contains(target) || navLinks.contains(target)) return;
+      closeMenu();
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth > 768) closeMenu();
     };
 
     const openWarning = () => {
@@ -27,11 +68,13 @@ function App() {
         window.location.href = '/writing.html';
         return;
       }
+      cwOverlay?.classList.add('open');
       cwOverlay?.classList.add('show');
       cwOverlay?.setAttribute('aria-hidden', 'false');
     };
 
     const closeWarning = () => {
+      cwOverlay?.classList.remove('open');
       cwOverlay?.classList.remove('show');
       cwOverlay?.setAttribute('aria-hidden', 'true');
     };
@@ -43,13 +86,28 @@ function App() {
       window.location.href = '/writing.html';
     };
 
+    const savedTheme = localStorage.getItem('theme');
+    applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
     menuBtn?.addEventListener('click', toggleMenu);
+    themeToggle?.addEventListener('click', toggleTheme);
+    navLinks?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('click', handleDocumentClick);
+    window.addEventListener('resize', handleResize);
     glimpseLink?.addEventListener('click', openWarning);
     cwCancel?.addEventListener('click', closeWarning);
     cwProceed?.addEventListener('click', proceedToWriting);
 
     return () => {
       menuBtn?.removeEventListener('click', toggleMenu);
+      themeToggle?.removeEventListener('click', toggleTheme);
+      navLinks?.querySelectorAll('a').forEach((link) => {
+        link.removeEventListener('click', closeMenu);
+      });
+      document.removeEventListener('click', handleDocumentClick);
+      window.removeEventListener('resize', handleResize);
       glimpseLink?.removeEventListener('click', openWarning);
       cwCancel?.removeEventListener('click', closeWarning);
       cwProceed?.removeEventListener('click', proceedToWriting);
@@ -60,13 +118,17 @@ function App() {
     <>
       <header>
         <nav className="container">
-          <h1 className="logo">Efya Sena</h1>
-
-          <button className="menu-btn" id="menuBtn" type="button">
+          <button
+            className="menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
             ☰
           </button>
 
-          <ul className="nav-links">
+          <ul className="nav-links" id="site-nav">
             <li>
               <a href="#hero">Home</a>
             </li>
@@ -90,10 +152,43 @@ function App() {
           <button
             id="theme-toggle"
             className="theme-btn"
-            aria-label="Toggle theme"
+            aria-label="Switch to dark mode"
             type="button"
           >
-            🌙
+            <svg
+              className="theme-icon theme-icon--moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.6 8.6 0 1 0 20.2 15.3Z"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <svg
+              className="theme-icon theme-icon--sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                strokeWidth="1.7"
+              />
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+              />
+            </svg>
           </button>
         </nav>
       </header>
