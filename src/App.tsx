@@ -65,7 +65,7 @@ function App() {
 
     const openWarning = () => {
       if (remembered) {
-        window.location.href = '/writing.html';
+        window.location.href = new URL('writing.html', window.location.href).href;
         return;
       }
       cwOverlay?.classList.add('open');
@@ -83,7 +83,7 @@ function App() {
       if (cwRemember?.checked) {
         localStorage.setItem('cwAccepted', 'true');
       }
-      window.location.href = '/writing.html';
+      window.location.href = new URL('writing.html', window.location.href).href;
     };
 
     const savedTheme = localStorage.getItem('theme');
